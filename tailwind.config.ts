@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -96,7 +97,69 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+      typography: (theme: (path: string) => string) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': theme('colors.foreground / 0.85'),
+            '--tw-prose-headings': theme('colors.foreground'),
+            '--tw-prose-lead': theme('colors.muted.foreground'),
+            '--tw-prose-links': theme('colors.primary'),
+            '--tw-prose-bold': theme('colors.foreground'),
+            '--tw-prose-counters': theme('colors.muted.foreground'),
+            '--tw-prose-bullets': theme('colors.primary / 0.7'),
+            '--tw-prose-hr': theme('colors.border'),
+            '--tw-prose-quotes': theme('colors.foreground'),
+            '--tw-prose-quote-borders': theme('colors.primary'),
+            '--tw-prose-captions': theme('colors.muted.foreground'),
+            '--tw-prose-code': theme('colors.foreground'),
+            '--tw-prose-pre-code': theme('colors.foreground'),
+            '--tw-prose-pre-bg': theme('colors.secondary / 0.7'),
+            '--tw-prose-th-borders': theme('colors.border'),
+            '--tw-prose-td-borders': theme('colors.border / 0.7'),
+            '--tw-prose-invert-body': theme('colors.foreground'),
+            '--tw-prose-invert-headings': theme('colors.foreground'),
+            '--tw-prose-invert-lead': theme('colors.muted.foreground'),
+            '--tw-prose-invert-links': theme('colors.primary'),
+            '--tw-prose-invert-bold': theme('colors.foreground'),
+            '--tw-prose-invert-counters': theme('colors.muted.foreground'),
+            '--tw-prose-invert-bullets': theme('colors.primary / 0.7'),
+            '--tw-prose-invert-hr': theme('colors.border'),
+            '--tw-prose-invert-quotes': theme('colors.foreground'),
+            '--tw-prose-invert-quote-borders': theme('colors.primary'),
+            '--tw-prose-invert-captions': theme('colors.muted.foreground'),
+            '--tw-prose-invert-code': theme('colors.foreground'),
+            '--tw-prose-invert-pre-code': theme('colors.foreground'),
+            '--tw-prose-invert-pre-bg': 'hsl(var(--muted) / 0.5)',
+            '--tw-prose-invert-th-borders': theme('colors.border'),
+            '--tw-prose-invert-td-borders': theme('colors.border / 0.7'),
+            'iframe[src*="open.spotify.com/embed"]': {
+              borderRadius: theme('borderRadius.xl'),
+              boxShadow: theme('boxShadow.xl'),
+              width: '100%',
+              aspectRatio: '100 / 40', // Adjusted for typical Spotify player height
+              minHeight: '352px', // Standard Spotify embed height
+              maxHeight: '400px', // Cap height
+              marginTop: theme('spacing.6'),
+              marginBottom: theme('spacing.6'),
+            },
+            'iframe': { 
+              borderRadius: theme('borderRadius.lg'),
+              boxShadow: theme('boxShadow.lg'),
+              width: '100%',
+              aspectRatio: '16 / 9', // Default for videos like YouTube
+              marginTop: theme('spacing.6'),
+              marginBottom: theme('spacing.6'),
+            },
+            img: {
+              borderRadius: theme('borderRadius.lg'),
+              boxShadow: theme('boxShadow.lg'),
+              marginTop: theme('spacing.6'),
+              marginBottom: theme('spacing.6'),
+            }
+          },
+        },
+      }),
   	}
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],

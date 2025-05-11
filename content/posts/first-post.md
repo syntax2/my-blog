@@ -42,4 +42,18 @@ If you selected Tailwind CSS during setup, `tailwind.config.ts` and `globals.css
 </h1>
 ```
 
+## Tune In 🎶
+
+Here's a little something to listen to while you code:
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 This is just the beginning. Next.js offers powerful features like Server Actions, Route Handlers, and advanced image optimization. Dive in and explore!
+
+Here's a meme for your troubles:
+
+![Developer Meme](https://picsum.photos/seed/dev-meme/600/400)
+
+And a screenshot of some code:
+
+![Code Screenshot](https://picsum.photos/seed/code-screenshot/800/450)
