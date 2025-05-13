@@ -31,7 +31,7 @@ export default async function HomePage({
           <div className="mb-8 flex justify-center">
             <Image
               src="https://picsum.photos/seed/avatar-main/128/128"
-              alt="Ayush"
+              alt="Ashish"
               width={128}
               height={128}
               className="rounded-full shadow-lg border-4 border-background"
@@ -42,10 +42,17 @@ export default async function HomePage({
             My Blogs, Stories and freshly brewed content.
           </h1>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
-            Welcome to my personal space where I share insights on technology, design, and life. Explore my latest articles and connect with me on{' '}
-            <Link href="https://example.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
+            Welcome to my personal space where I share insights on technology,
+            design, and life. Explore my latest articles and connect with me on{" "}
+            <Link
+              href="https://www.ashishkadian.tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
               my personal site
-            </Link>.
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -53,7 +60,7 @@ export default async function HomePage({
       {/* Posts Section */}
       {paginatedPosts.length > 0 ? (
         <section>
-          {currentView === 'grid' ? (
+          {currentView === "grid" ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {paginatedPosts.map((post) => (
                 <PostCard key={post.slug} post={post} />
@@ -69,7 +76,9 @@ export default async function HomePage({
           <Pagination currentPage={currentPage} totalPages={totalPages} />
         </section>
       ) : (
-        <p className="text-center text-muted-foreground text-xl py-10">No posts found. Check back soon!</p>
+        <p className="text-center text-muted-foreground text-xl py-10">
+          No posts found. Check back soon!
+        </p>
       )}
     </div>
   );

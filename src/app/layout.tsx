@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Ayush', // Updated title
-  description: 'My Blogs, Stories and freshly brewed content.',
+  title: "Ashish", // Updated title
+  description: "My Blogs, Stories and freshly brewed content.",
   icons: {
-    icon: 'https://media.gettyimages.com/id/1160027332/vector/creative-elegant-letter-a-vector-emblem.jpg?s=612x612&w=gi&k=20&c=2LyIPLLrLF3P9CDe7DT2mR97WQzv6KtiV915MaE2F40=',
+    icon: "https://media.gettyimages.com/id/1160027332/vector/creative-elegant-letter-a-vector-emblem.jpg?s=612x612&w=gi&k=20&c=2LyIPLLrLF3P9CDe7DT2mR97WQzv6KtiV915MaE2F40=",
   },
 };
 
