@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 
 export function Logo() {
@@ -6,26 +7,24 @@ export function Logo() {
       <svg
         width="32"
         height="32"
-        viewBox="0 0 32 32"
+        viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-primary group-hover:text-accent transition-colors duration-200"
+        className="group-hover:opacity-90 transition-opacity duration-200"
+        aria-label="Ayush Logo"
       >
-        <path
-          d="M16 4L28 28H4L16 4Z"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M10 20H22"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
+        {/* Left main stroke of 'A' */}
+        <path d="M20 85 L48 15" stroke="hsl(var(--primary))" strokeWidth="12" strokeLinecap="round" />
+        {/* Right main stroke of 'A' */}
+        <path d="M80 85 L52 15" stroke="hsl(var(--accent))" strokeWidth="12" strokeLinecap="round" />
+        {/* Crossbar of 'A' */}
+        <path d="M32 55 L68 55" stroke="hsl(var(--chart-1))" strokeWidth="10" strokeLinecap="round" />
+        {/* Decorative element / Apex highlight */}
+        <path d="M40 35 Q50 25 60 35" stroke="hsl(var(--chart-2))" strokeWidth="8" fill="none" strokeLinecap="round" />
+
       </svg>
       <span className="font-bold text-xl text-foreground group-hover:text-accent transition-colors duration-200 hidden sm:inline-block">
-        Content Canvas
+        Ayush
       </span>
     </Link>
   );

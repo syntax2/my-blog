@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -17,8 +18,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Content Canvas',
+  title: 'Ayush', // Updated title
   description: 'My Blogs, Stories and freshly brewed content.',
+  icons: {
+    icon: 'https://media.gettyimages.com/id/1160027332/vector/creative-elegant-letter-a-vector-emblem.jpg?s=612x612&w=gi&k=20&c=2LyIPLLrLF3P9CDe7DT2mR97WQzv6KtiV915MaE2F40=',
+  },
 };
 
 export default function RootLayout({
