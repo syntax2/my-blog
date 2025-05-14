@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSortedPostsData, POSTS_PER_PAGE } from '@/lib/posts';
@@ -6,7 +7,11 @@ import { PostListItem } from '@/components/blog/PostListItem';
 import { Pagination } from '@/components/blog/Pagination';
 import type { Post } from '@/types';
 
-export const dynamic = 'force-dynamic'; // Ensure searchParams are available
+// Make sure to handle searchParams as a promise if needed, or ensure it's correctly passed
+// For Vercel deployment, ensure that if this page is statically generated, searchParams access is compatible.
+// If dynamic, ensure Next.js version and Vercel config handle it.
+// The current error is in /blog/[slug], so this page might be fine, but good to keep in mind.
+export const dynamic = 'force-dynamic'; // Retain dynamic if searchParams are actively used and vary
 
 export default async function HomePage({
   searchParams,
@@ -14,6 +19,8 @@ export default async function HomePage({
   searchParams?: { view?: 'grid' | 'list'; page?: string };
 }) {
   const allPosts = getSortedPostsData();
+  
+  // Safely access searchParams properties
   const currentPage = Number(searchParams?.page) || 1;
   const currentView = searchParams?.view || 'grid';
 

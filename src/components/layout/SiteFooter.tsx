@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Github, Twitter, Instagram, Linkedin } from 'lucide-react';
 
@@ -45,8 +46,7 @@ export function SiteFooter() {
           </Link>
         </div>
         <p className="text-sm">
-          &copy; 2019–{currentYear} Blogs and Stories by Ashish. All rights
-          reserved.
+          &copy; 2018–{currentYear} Blogs and Stories by Ashish. All rights reserved.
         </p>
       </div>
     </footer>
