@@ -1,13 +1,13 @@
-
-import { getPostData, getAllPostSlugs } from '@/lib/posts';
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import { format } from 'date-fns';
-import { CalendarDays, Clock } from 'lucide-react';
-import type { Metadata } from 'next';
-import type { Post } from '@/types';
-import { ScrollProgressBar } from '@/components/blog/ScrollProgressBar';
-import { NewsletterSubscription } from '@/components/blog/NewsletterSubscription';
+"use client";
+import { getPostData, getAllPostSlugs } from "@/lib/posts";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { format } from "date-fns";
+import { CalendarDays, Clock } from "lucide-react";
+import type { Metadata } from "next";
+import type { Post } from "@/types";
+import { ScrollProgressBar } from "@/components/blog/ScrollProgressBar";
+import { NewsletterSubscription } from "@/components/blog/NewsletterSubscription";
 
 type Props = {
   params: { slug: string };
@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } catch (error) {
     return {
       title: "Post not found",
-      description: "The requested blog post could not be found."
-    }
+      description: "The requested blog post could not be found.",
+    };
   }
 }
 
 export async function generateStaticParams() {
   const paths = getAllPostSlugs();
-  return paths.map(path => ({ slug: path.slug }));
+  return paths.map((path) => ({ slug: path.slug }));
 }
 
 export default async function PostPage({ params }: Props) {
@@ -43,21 +43,22 @@ export default async function PostPage({ params }: Props) {
 
   const showCoverImage = post.coverImage !== "no-cover";
   // Define coverImageUrl, ensuring it's always a valid string if showCoverImage is true
-  let coverImageUrl = '';
+  let coverImageUrl = "";
   if (showCoverImage) {
-    if (post.coverImage) { // Use specific seed if available
+    if (post.coverImage) {
+      // Use specific seed if available
       coverImageUrl = `https://picsum.photos/seed/${post.coverImage}/1200/600`;
-    } else { // Fallback to slug-based seed if coverImage is undefined/empty but not "no-cover"
+    } else {
+      // Fallback to slug-based seed if coverImage is undefined/empty but not "no-cover"
       coverImageUrl = `https://picsum.photos/seed/${post.slug}/1200/600`;
     }
   }
 
-
   return (
     <div className="relative">
       <ScrollProgressBar />
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12"> 
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         <article className="max-w-3xl mx-auto">
           <header className="mb-10">
             {showCoverImage && coverImageUrl && (
@@ -80,7 +81,9 @@ export default async function PostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-muted-foreground text-sm mb-8">
               <div className="flex items-center">
                 <CalendarDays className="h-4 w-4 mr-1.5 text-primary" />
-                <time dateTime={post.date}>{format(new Date(post.date), 'MMMM d, yyyy')}</time>
+                <time dateTime={post.date}>
+                  {format(new Date(post.date), "MMMM d, yyyy")}
+                </time>
               </div>
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-1.5 text-primary" />
@@ -88,7 +91,7 @@ export default async function PostPage({ params }: Props) {
               </div>
             </div>
           </header>
-          
+
           <div
             className="prose dark:prose-invert prose-lg max-w-none 
                        prose-headings:font-bold prose-headings:tracking-tight
@@ -99,12 +102,12 @@ export default async function PostPage({ params }: Props) {
                        prose-pre:bg-secondary/70 prose-pre:p-4 prose-pre:rounded-lg prose-pre:shadow-inner
                        prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground
                        prose-hr:border-border/70 my-5"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
+            dangerouslySetInnerHTML={{ __html: post.contentHtml || "" }}
           />
         </article>
-        
+
         <div className="max-w-3xl mx-auto">
-            <NewsletterSubscription />
+          <NewsletterSubscription />
         </div>
       </div>
     </div>
