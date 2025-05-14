@@ -1,6 +1,5 @@
-# Content Canvas - Next.js Blog Starter
-
-This is a Next.js blog starter application called "Content Canvas", built with TypeScript and Tailwind CSS.
+# My Blog website
+ Feel free to fork it and create your own custom blog website
 
 ## Features
 
@@ -53,30 +52,5 @@ This is a Next.js blog starter application called "Content Canvas", built with T
 -   `/src/types`: TypeScript type definitions.
 
 ## Adding New Posts
+Create a new `.md` file in the `content/posts` directory (e.g., `my-new-post.md`).
 
-1.  Create a new `.md` file in the `content/posts` directory (e.g., `my-new-post.md`).
-2.  Add front-matter to the top of the file:
-    ```markdown
-    ---
-    title: "My New Post Title"
-    excerpt: "A short summary of this amazing new post."
-    date: "YYYY-MM-DD" # e.g., 2024-08-01
-    readingTime: "X min read" # e.g., 7 min read
-    coverImage: "my-post-cover-seed" # A unique seed for picsum.photos, or "no-cover"
-    ---
-
-    Your markdown content starts here...
-    ```
-3.  Write your blog post content using Markdown.
-4.  The new post will automatically appear on the site after restarting the dev server or rebuilding.
-
-## Customization
-
--   **Theme Colors:** Modify CSS variables in `src/app/globals.css`.
--   **Tailwind Config:** Update `tailwind.config.ts`.
--   **Logo:** Change the SVG in `src/components/ui/Logo.tsx` or replace the component.
--   **Hero Section:** Edit content in `src/app/page.tsx`.
--   **Footer:** Update links and text in `src/components/layout/SiteFooter.tsx`.
--   **Posts per page:** Change `POSTS_PER_PAGE` in `src/lib/posts.ts`.
-
-Enjoy building your blog with Content Canvas!
